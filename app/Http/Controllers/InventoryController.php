@@ -108,18 +108,18 @@ class InventoryController extends Controller
                 if ($h < 0 || $h > 12 || $m < 0 || $m > 59) {
                     $status = '1';
                     $result = 'invalid time';
-                } else if ($m === 30) {
-                    $result =  "setengah ". $this->numToStr($h + 1) . $this->timeStatus($arrTimes[0]++);
+                } else if ($m == 30) {
+                    $result =  "setengah ". $this->numToStr($h + 1) . " ". $this->timeStatus($arrTimes[0]++);
                     $status = '1';
                 } else if ($m > 30) {
                     $status = '1';
-                    $result = $this->numToStr($h + 1) . " kurang " . $this->numToStr(60 - $m) . $this->timeStatus($arrTimes[0]++);
-                } else if ($m === 0) {
+                    $result = $this->numToStr($h + 1) . " kurang " . $this->numToStr(60 - $m) ." ". $this->timeStatus($arrTimes[0]++);
+                } else if ($m == 0) {
                     $status = '1';
                     $result =  numToStr($h) . timeStatus($arrTimes[0]);
                 } else {
                     $status = '1';
-                    $result =  $this->numToStr($h) . " lewat " . $this->numToStr($m) .  $this->timeStatus($arrTimes[0]);
+                    $result =  $this->numToStr($h) . " lewat " . $this->numToStr($m) ." ".  $this->timeStatus($arrTimes[0]);
                 }
                 
            }
